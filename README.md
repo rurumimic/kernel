@@ -1,8 +1,11 @@
 # kernel
 
-- [kernel.org](https://www.kernel.org/)
-- kernel/git/stable/linux.git
+- [docs](https://docs.kernel.org/)
+- [torvalds/linux](https://github.com/torvalds/linux)
+  - [v2.6.39](https://github.com/torvalds/linux/tree/v2.6.39)
+- kernel.org: [kernel/git/stable/linux.git](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git)
   - [v2.6.39.4](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tag/?h=v2.6.39.4)
+
 
 ```bash
 # 1
