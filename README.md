@@ -20,7 +20,8 @@ tar xzf linux-2.6.39.4.tar.gz
 
 ## distro
 
-| Release | Kernel Version |
-| RHEL 6.10 | 2.6.32-754 |
-| Fedora 15 Lovelock | 2.6.38 |
-| Ubuntu 11.04 Natty Narwhal | 2.6.38 |
+| Release                    | Kernel Version |
+| -------------------------- | -------------- |
+| RHEL 6.10                  | 2.6.32-754     |
+| Fedora 15 Lovelock         | 2.6.38         |
+| Ubuntu 11.04 Natty Narwhal | 2.6.38         |
