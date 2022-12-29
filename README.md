@@ -18,6 +18,32 @@ curl -O https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/snapsho
 tar xzf linux-2.6.39.4.tar.gz
 ```
 
+## Make
+
+```bash
+make help
+```
+
+### gnu gloabl
+
+SpaceVim: [gtags](https://spacevim.org/layers/gtags/)
+
+```bash
+sudo apt install global
+```
+
+```bash
+make gtags
+
+GEN gtags
+```
+
+```bash
+├── [3.1M]  GPATH
+├── [196M]  GRTAGS
+├── [ 63M]  GTAGS
+```
+
 ## distro
 
 | Release                    | Kernel Version |
