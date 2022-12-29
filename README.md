@@ -24,13 +24,24 @@ tar xzf linux-2.6.39.4.tar.gz
 make help
 ```
 
-### gnu gloabl
+### Vim
 
-SpaceVim: [gtags](https://spacevim.org/layers/gtags/)
+### Tags
+
+- [universal-ctags/ctags](https://github.com/universal-ctags/ctags)
+- [cscope](https://cscope.sourceforge.net/)
+- [GNU global](https://www.gnu.org/software/global/)
 
 ```bash
+sudo apt install universal-ctags
+sudo apt install cscope
 sudo apt install global
 ```
+
+#### SpaceVim
+
+- [cscope](https://spacevim.org/layers/cscope/)
+- [gtags](https://spacevim.org/layers/gtags/)
 
 ```bash
 make gtags
