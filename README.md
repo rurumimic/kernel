@@ -44,15 +44,20 @@ sudo apt install global
 - [gtags](https://spacevim.org/layers/gtags/)
 
 ```bash
+make TAGS
+make cscope
 make gtags
-
-GEN gtags
 ```
 
 ```bash
 ├── [3.1M]  GPATH
 ├── [196M]  GRTAGS
 ├── [ 63M]  GTAGS
+├── [ 82M]  TAGS
+├── [542K]  cscope.files
+├── [232M]  cscope.out
+├── [ 46M]  cscope.out.in
+├── [335M]  cscope.out.po
 ```
 
 ## distro
