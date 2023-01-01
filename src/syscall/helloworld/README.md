@@ -199,7 +199,7 @@ Breakpoint 1 at 0x401000
 mov 0xf,%rdx
 ```
 
-- wrong: memory `0xf` → `%rdx`
+- wrong: memory address `0xf` → `%rdx`
 - should be: `$0xf`
 
 #### Rewrite
@@ -232,6 +232,8 @@ echo $?
 
 42
 ```
+
+<img src="images/gdb2.png" width="500px">
 
 ---
 
