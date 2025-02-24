@@ -8,7 +8,7 @@
 
 ```bash
 # github: torvalds
-git clone -b v2.6.39 https://github.com/torvalds/linux.git
+git clone -b v2.6.39 https://github.com/torvalds/linux.git v2.6.39
 
 # git.kernel.org
 git clone -b v2.6.39.4 git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git
