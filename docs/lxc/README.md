@@ -8,7 +8,7 @@
 
 ## Namespace
 
-- [v2.4.19](https://www.kernel.org/pub/linux/kernel/v2.4/linux-2.4.19.tar.gz): [include/linux/sched.h](https://elixir.bootlin.com/linux/2.4.19/source/include/linux/sched.h#L45) - `CLONE_NEWNS`
+- [v2.4.19.tar.gz](https://www.kernel.org/pub/linux/kernel/v2.4/linux-2.4.19.tar.gz): [include/linux/sched.h](https://elixir.bootlin.com/linux/2.4.19/source/include/linux/sched.h#L45) - `CLONE_NEWNS`
 
 네임스페이스는 커널 v2.4.19에서 실험적으로 도입되었다.
 
@@ -65,11 +65,10 @@ int do_fork(unsigned long clone_flags, unsigned long stack_start,
 ## Control Groups
 
 - 트리 형태의 계층 구조로 프로세스 그룹을 관리하는 기능
-
-기존 리눅스에는 리소스를 추적 관리할 수 있는 여러가지 다양한 방법들이 있었다 (cpusets, CKRM/ResGroups, UserBeanCounters, and virtual server
-namespaces)
-
-일관된 프로세스 관리를 위해서 cgroup 기능을 개발함.
+- 기존 리눅스에는 리소스를 추적 관리할 수 있는 여러가지 다양한 방법들이 있었다.
+  - cpusets, CKRM/ResGroups, UserBeanCounters, and virtual server
+namespaces
+- 일관된 프로세스 관리를 위해서 cgroup 기능을 개발함.
 
 ### 다중 계층 구조 Multiple Hierarchy 지원
 
@@ -117,15 +116,15 @@ static struct task_struct *copy_process(unsigned long clone_flags,
 
 #### **cgroup_create()** 순서
 
-1️. 사용자가 `mkdir /sys/fs/cgroup/cpu/my_cgroup` 실행  
-2. `cgroup_mkdir()` 호출  
-3. `cgroup_create()` 호출  
-4. 새로운 cgroup 자료구조(`cgroup`) 동적 할당  
-5. 부모-자식 관계 설정 및 초기화  
-6. 서브시스템(`cpu`, `memory` 등) 초기화  
-7. 파일 시스템에서 cgroup 디렉터리 생성 (`cgroup_create_dir()`)  
-8. `cgroup_populate_dir()`을 호출하여 기본 속성 파일 생성  
-9. 성공하면 0 반환, 실패하면 정리 후 오류 반환  
+1. 사용자가 `mkdir /sys/fs/cgroup/cpu/my_cgroup` 실행
+2. `cgroup_mkdir()` 호출
+3. `cgroup_create()` 호출
+4. 새로운 cgroup 자료구조(`cgroup`) 동적 할당
+5. 부모-자식 관계 설정 및 초기화
+6. 서브시스템(`cpu`, `memory` 등) 초기화
+7. 파일 시스템에서 cgroup 디렉터리 생성 (`cgroup_create_dir()`)
+8. `cgroup_populate_dir()`을 호출하여 기본 속성 파일 생성
+9. 성공하면 0 반환, 실패하면 정리 후 오류 반환
 
 ---
 
@@ -179,7 +178,7 @@ const struct ns_info ns_info[LXC_NS_MAX] = {
 - [src/lxc/start.c#L1621-L2000](https://github.com/lxc/lxc/blob/fc77e20953b87bc1a3f2f07a079647bec990da57/src/lxc/start.c#L1621-L2000)
 - [src/lxc/start.c#L1050-L1454](https://github.com/lxc/lxc/blob/fc77e20953b87bc1a3f2f07a079647bec990da57/src/lxc/start.c#L1050-L1454)
 
-1. LXC를 시작하면 지정한 자원들을 차례로 분리한다.  
+1. LXC를 시작하면 지정한 자원들을 차례로 분리한다.
 1. 파일시스템을 설정한다.
 1. 컨테이너 내부에서 실행할 프로세스를 실행한다.
 
@@ -214,9 +213,9 @@ SYSCALL_DEFINE2(pivot_root, const char __user *, new_root,
 1. 새로운 루트(`new_mnt`)를 `/`로 설정
 1. 네임스페이스(`mnt_ns`) 업데이트
 
-namespaces와 cgroups로 컨테이너를 격리했지만,  
-Host의 파일 시스템(`put_old`)와 컨테이너의 새 파일 시스템(`new_root`)이 다르기 때문에  
+namespaces와 cgroups로 컨테이너를 격리했지만,
+Host의 파일 시스템(`put_old`)와 컨테이너의 새 파일 시스템(`new_root`)이 다르기 때문에
 완전히 독립된 사용자 공간으로 사용 가능하다.
 
-컨테이너는 Host와 커널은 공유하고, 사용자 공간은 분리됐기 때문에  
+컨테이너는 Host와 커널은 공유하고, 사용자 공간은 분리됐기 때문에
 Host OS와 Container OS가 다르더라도 실행 가능하다.
