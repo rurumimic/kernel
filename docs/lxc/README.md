@@ -136,7 +136,7 @@ Container = Namespace(격리) + cgroups(자원제한) + 루트 파일시스템(r
 
 - [include/uapi/linux/sched.h#L24-L29](https://github.com/torvalds/linux/blob/2dcd0af568b0cf583645c8a317dd12e344b1c72a/include/uapi/linux/sched.h#L24-L29)
 
-`clone()` 함수에 다음 플래그를 설정하면 같은 커널을 공유하면서도 독립된 환경을 만들 수 있다.
+`clone()` 함수에 다음 플래그를 설정하면 같은 **커널을 공유**하면서도 **독립된 프로세스**를 만들 수 있다.
 
 ```c
 #define CLONE_NEWNS	0x00020000	/* New mount namespace group */
@@ -215,7 +215,7 @@ SYSCALL_DEFINE2(pivot_root, const char __user *, new_root,
 
 namespaces와 cgroups로 컨테이너를 격리했지만,
 Host의 파일 시스템(`put_old`)와 컨테이너의 새 파일 시스템(`new_root`)이 다르기 때문에
-완전히 독립된 사용자 공간으로 사용 가능하다.
+**완전히 독립된 사용자 공간으로 사용 가능하다.**
 
 컨테이너는 Host와 커널은 공유하고, 사용자 공간은 분리됐기 때문에
-Host OS와 Container OS가 다르더라도 실행 가능하다.
+**Host OS와 Container OS가 다르더라도 실행 가능하다.**
